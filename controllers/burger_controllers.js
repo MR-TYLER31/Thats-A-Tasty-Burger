@@ -22,4 +22,19 @@ router.post("/api/add", (req, res) => {
   });
 });
 
+router.put("/api/eat/:id", function(req, res) {
+  let id = req.params.id;
+
+  burger.update(id, data => {
+    res.json(data);
+  });
+});
+
+router.delete("/api/remove/:id", function(req, res) {
+  let id = req.params.id;
+
+  burger.delete(id, data => {
+    res.json(data);
+  });
+});
 module.exports = router;

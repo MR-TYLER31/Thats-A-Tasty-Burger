@@ -28,6 +28,12 @@ let orm = {
         cb(resp);
       }
     );
+  },
+  delete: function(id, cb) {
+    connection.query("DELETE FROM burgers WHERE id = ?", [id], (err, resp) => {
+      if (err) throw err;
+      cb(resp);
+    });
   }
 };
 
